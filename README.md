@@ -5,7 +5,7 @@ Este es el repositorio del *Grupo 21*, cuyos integrantes son:
 * José Del Campo - 202011569-9
 * Sophia Escobar - 202073563-8
 * Antonio Rey - 202173633-6
-* Jesus Escanilla -
+* Jesus Escanilla - 202073570-0
 
 ## Wiki
 
