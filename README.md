@@ -9,7 +9,7 @@ Este es el repositorio del *Grupo 21*, cuyos integrantes son:
 
 ## Wiki
 
-Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/Nachops/INF236P201G14/wiki)
+Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/ELGRANJ2014/INF225P201G21/wiki)
 
 ## Videos
 
