@@ -1,76 +1,72 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router";
 import "./TuComponente.css"
 
-const TuComponente = () => {
-  const [form, setform] = useState({
-    RUT: '',
-    Password: '',
-  });
+// const mongoose = require('mongoose');
+// const bcrypt = require('bcrypt');
 
-  const navigate = useNavigate();
-  function updateForm(value) {
-      return setform((prev) => {
-        return { ...prev, ...value };
-      });
-    }
+// const userSchema = new moongose.Schema({
+//     nombre: { type: String, required: true },
+//     contrasena: { type: String, required: true}
+// });
 
-  async function onSubmit(e) {
-      e.preventDefault();
+// userSchema.pre('save', function(next){
+//     if(this.isNew || this.isModified('contrasena')){
+//         const document = this;
 
-      const nuevoPaciente = { ...form};
+//         bcrypt.hash(document.contrasena, saltRounds, (err, hashedPassword) => {
+//             document.contrasena = hashedPassword;
+//             next();
+//         });
+//     } else {
+//         next();
+//     }
+// });
 
-      await fetch("http://localhost:5000", {
-          method: "POST",
-          headers: {
-              "Content-Type": "application/json",
-          },
-          body: JSON.stringify(nuevoPaciente)
-      })
-      .catch(error => {
-          window.alert(error);
-          return;
-      });
+const Login = () => {
 
-      setform({ RUT: "", contrasena: ""});
-      navigate("/");
-  }
-  return (
-    <div className="form-container">
-      <div>
-        <h3>SIGN UP</h3>
-        <form onSubmit={onSubmit}>
-          <div className="form-group">
-            <label htmlFor="RUT">RUT</label>
-            <input
-              type="text"
-              name="RUT"
-              className="form-control"
-              value={form.RUT}
-              onChange={(e) => updateForm({ RUT: e.target.value })}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="Contraseña">Password</label>
-            <input
-              type="text"
-              name="Contraseña"
-              className="form-control"
-              value={form.contrasena}
-              onChange={(e) => updateForm({ contrasena: e.target.value })}
-            />
-          </div>
-          <div className="form-group button-container">
-            <input
-              type="submit"
-              value="sign up"
-              className="btn btn-primary"
-            />
-          </div>
-        </form>
-      </div>
-    </div>
-  );
+    const [form, setForm] = useState({
+        nombre: '',
+        contrasena: '',
+    });
+
+    const changelog = (e) => {
+        const value = e.target.value;
+        setForm(value)
+    };
+
+    const guardarDatos = () => {
+        
+    };
+
+    return (
+        <div className="login">
+            <h2>Registrarse</h2>
+            <form>
+              <div className="form-input">
+                <label>Nombre</label>
+                <input
+                id="nombre"
+                name="nombre"
+                type="text"
+                value={form.nombre}
+                onChange={changelog}
+                required></input>
+              </div>
+              <div className="form-input">
+                <label>Contraseña</label>
+                <input
+                id="contrasena"
+                name="contrasena"
+                type="password"
+                value={form.contrasena}
+                onChange={changelog}
+                required></input>
+              </div>
+              <button onClick={guardarDatos} to={"/TuComponente"}>Crear</button>
+            </form>
+        </div>
+    );
+
 };
 
-export default TuComponente;
+export default Login;

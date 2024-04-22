@@ -11,3 +11,73 @@
   justify-content: center;
   height: 100vh; /* Ajusta la altura según tus necesidades */
 }
+
+.background {
+  background-color: azure;
+  width: max-content;
+}
+
+.login {
+  /* align-items: center; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: lightsteelblue;
+  /* opacity: 75%; */
+  padding: 5%;
+  border-radius: 15%;
+  justify-content: space-evenly;
+  
+}
+
+.login .form-input {
+  position: relative;
+  justify-content: center;
+  margin: auto;
+}
+
+.login .form-input input {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 20px;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #eee;
+  outline: none;
+  background: rgba(255, 255, 255, 0);
+}
+
+.login button {
+  /* background-color: darkgray; */
+  margin-top: 10%;
+  opacity: 50%;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 20px;
+  width: fit-content;
+  transition: 0.2s;
+}
+
+.login button:hover {
+  /* background-color: dimgrey; */
+  opacity: 75%;
+}
+
+.login .form-input label {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  padding: 10px 0;
+  font-size: 15px;
+  pointer-events: none;
+  /* transition: 0.2s; */
+}
+
+.login .form-input input:focus + label,
+.login .form-input input:valid + label {
+  top: -20px !important;
+  left: 0;
+  font-size: 15px !important;
+  color: blueviolet !important;
+}
