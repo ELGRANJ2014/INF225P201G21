@@ -43,7 +43,6 @@ const Login = () => {
             <h2>Registrarse</h2>
             <form>
               <div className="form-input">
-                <label>Nombre</label>
                 <input
                 id="nombre"
                 name="nombre"
@@ -51,9 +50,9 @@ const Login = () => {
                 value={form.nombre}
                 onChange={changelog}
                 required></input>
+                <label className="input-label">Nombre</label>
               </div>
               <div className="form-input">
-                <label>Contraseña</label>
                 <input
                 id="contrasena"
                 name="contrasena"
@@ -61,6 +60,7 @@ const Login = () => {
                 value={form.contrasena}
                 onChange={changelog}
                 required></input>
+                <label className="input-label">Contraseña</label>
               </div>
               <button onClick={guardarDatos} to={"/TuComponente"}>Crear</button>
             </form>

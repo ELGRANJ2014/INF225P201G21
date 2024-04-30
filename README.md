@@ -11,6 +11,12 @@ Este es el repositorio del *Grupo 21*, cuyos integrantes son:
 
 Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/ELGRANJ2014/INF225P201G21/wiki)
 
+## Instrucciones
+
+En la terminal ir a la carpeta "server" y ejecutar `npm run dev`.
+Luego en la carpeta "client" ejecutar `npm start`.
+
+
 ## Videos
 
 * [Video presentación avance 1](https://youtu.be/BfPV3qg5CJ0)
