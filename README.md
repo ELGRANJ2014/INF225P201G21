@@ -9,7 +9,7 @@ Este es el repositorio del *Grupo 21*, cuyos integrantes son:
 
 ## Wiki
 
-Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/ELGRANJ2014/INF225P201G21/wiki)
+Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/ELGRANJ2014/INF225P201G21/wiki). Aquí se encuentra la *Agenda*, donde recapitulamos lo hecho y lo logrado en cada hito, además de incluir lo que tenemos pendiente por hacer.
 
 ## Instrucciones
 
