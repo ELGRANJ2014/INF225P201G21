@@ -13,7 +13,12 @@ recordRoutes.route("/test/add").post(function (req, response) {
   let myobj = {
     RUT: req.body.Rut,
     Nombre: req.body.Nombre,
+    Fecha: req.body.Fecha,
+    Fonasa: req.body.Fonasa,
+    Medico: req.body.Medico,
+    Alergias: req.body.Alergias,
     Observaciones: req.body.Observaciones,
+    Diagnostico: req.body.Diagnostico,
     Tipo_de_examen: req.body.Tipo_de_examen,
   };
   db_connect.collection("test").insertOne(myobj, function (err, res) {
