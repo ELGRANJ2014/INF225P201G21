@@ -1,6 +1,7 @@
 import unittest
 import requests
 import json
+from datetime import date
 
 class AgendarHoraTestCase(unittest.TestCase):
     valid_source_destination_requests_data = None
@@ -18,21 +19,60 @@ class AgendarHoraTestCase(unittest.TestCase):
         del cls.valid_source_destination_requests_data
         del cls.invalid_source_destination_requests_data
 
-    @classmethod
     def testAgendarHora(self):
         payload = {'RUT': '1.111.111-1',
           'Nombre': 'Jacinto',
-          'Fecha': '1935-03-01',
+          'Fecha': date(1935,1,3),
           'Fonasa': 'A',
           'Medico': 'Dr. Mengueche',
-          'Alergias': 'Polen',
+          'Alergias': 'Polen',  
           'Observaciones': 'Ninguna',
           'Diagnostico': 'Alergia a la pala',
-          'Tipo_de_examen': 'Ecografía',}
+          'Tipo_de_examen': 'Ecografía'}
 
-        response = requests.post(self.base_url, json=self.valid_source_destination_requests_data, auth=(self.user, self.password))
-        
+        try:
+            response = requests.post(self.base_url, data=payload, json=self.valid_source_destination_requests_data, auth=(self.user, self.password))
+        except Exception as e:
+            print(f'Error: {e}')
+
+        if response.status_code == 201: # Success on creating
+            print('Hora agendada')
+
+        if response.status_code == 400: # Invalid request
+            print('Faltan datos por llenar')
+
+        if response.status_code == 404: # Not found
+            print('No se ha encontrado el recurso')
+
         print(response)
+
+    def testAgendarHoraSinDatos(self):
+        payload = {'RUT': '1.111.111-1',
+          'Nombre': 'Jacinto',
+          'Fecha': None,
+          'Fonasa': 'A',
+          'Medico': 'Dr. Mengueche',
+          'Alergias': 'Polen',  
+          'Observaciones': 'Ninguna',
+          'Diagnostico': 'Alergia a la pala',
+          'Tipo_de_examen': 'Ecografía'}
+
+        try:
+            response = requests.post(self.base_url, data=payload, json=self.valid_source_destination_requests_data, auth=(self.user, self.password))
+        except Exception as e:
+            print(f'Error: {e}')
+
+        if response.status_code == 201: # Success on creating
+            print('Hora agendada')
+
+        if response.status_code == 400: # Invalid request
+            print('Faltan datos por llenar')
+
+        if response.status_code == 404: # Not found
+            print('No se ha encontrado el recurso')
+
+        print(response)
+        
 
 
 if __name__ == '__main__':
