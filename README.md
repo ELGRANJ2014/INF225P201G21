@@ -16,6 +16,10 @@ Puede acceder a la Wiki mediante el siguiente [enlace](https://github.com/ELGRAN
 En la terminal ir a la carpeta "server" y ejecutar `npm run dev`.
 Luego en la carpeta "client" ejecutar `npm start`.
 
+## Problemas comunes
+
+Aún estando al día con el código, pueden presentarse problemas con npm, los cuales casi siempre se solucionan con un `npm install` en el mismo directorio.
+
 
 ## Videos
 
