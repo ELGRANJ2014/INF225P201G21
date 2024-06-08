@@ -1,6 +1,7 @@
 import unittest
 import requests
 import json
+import datetime
 from datetime import date
 
 class AgendarHoraTestCase(unittest.TestCase):
@@ -12,7 +13,7 @@ class AgendarHoraTestCase(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.base_url = "https://sa-east-1.aws.data.mongodb-api.com/app/data-rrozl/endpoint/data/v1"
+        cls.base_url = "https://sa-east-1.aws.data.mongodb-api.com/app/data-rrozl/endpoint/test"
 
     @classmethod
     def tearDownClass(cls):
@@ -20,18 +21,18 @@ class AgendarHoraTestCase(unittest.TestCase):
         del cls.invalid_source_destination_requests_data
 
     def testAgendarHora(self):
-        payload = {'RUT': '1.111.111-1',
-          'Nombre': 'Jacinto',
-          'Fecha': date(1935,1,3),
-          'Fonasa': 'A',
-          'Medico': 'Dr. Mengueche',
-          'Alergias': 'Polen',  
-          'Observaciones': 'Ninguna',
-          'Diagnostico': 'Alergia a la pala',
-          'Tipo_de_examen': 'Ecografía'}
+        payload = {'RUT': "1.111.111-1",
+          'Nombre': "Jacinto",
+          'Fecha': date(1999,1,1),
+          'Fonasa': "A",
+          'Medico': "Dr. Mengueche",
+          'Alergias': "Polen",  
+          'Observaciones': "Ninguna",
+          'Diagnostico': "Alergia a la pala",
+          'Tipo_de_examen': "Ecografía"}
 
         try:
-            response = requests.post(self.base_url, data=payload, json=self.valid_source_destination_requests_data, auth=(self.user, self.password))
+            response = requests.post(self.base_url, data=payload, auth=(self.user, self.password))
         except Exception as e:
             print(f'Error: {e}')
 

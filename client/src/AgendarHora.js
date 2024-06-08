@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import "./agendarHora.css"
 
-const TuComponente = () => {
+const AgendarHora = () => {
+  document.body.style.backgroundColor = "aliceblue;";
+
   const [formData, setFormData] = useState({
     RUT: '',
     Nombre: '',
@@ -153,17 +156,18 @@ const TuComponente = () => {
               onChange={handleChange}
             />
           </div>
-          <div className="form-group button-container">
-            <input
-              type="submit"
-              value="Crear paciente"
-              className="btn btn-primary"
-            />
-          </div>
+          
         </form>
+      <div className="button-container">
+          <input
+            type="submit"
+            value="Crear paciente"
+            className="btn btn-primary"
+          />
+        </div>
       </div>
     </div>
   );
 };
 
-export default TuComponente;
+export default AgendarHora;
