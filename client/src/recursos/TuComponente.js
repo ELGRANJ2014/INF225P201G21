@@ -1,27 +1,6 @@
 import React, { useState } from "react";
 import "./TuComponente.css"
 
-// const mongoose = require('mongoose');
-// const bcrypt = require('bcrypt');
-
-// const userSchema = new moongose.Schema({
-//     nombre: { type: String, required: true },
-//     contrasena: { type: String, required: true}
-// });
-
-// userSchema.pre('save', function(next){
-//     if(this.isNew || this.isModified('contrasena')){
-//         const document = this;
-
-//         bcrypt.hash(document.contrasena, saltRounds, (err, hashedPassword) => {
-//             document.contrasena = hashedPassword;
-//             next();
-//         });
-//     } else {
-//         next();
-//     }
-// });
-
 const Login = () => {
 
     const [form, setForm] = useState({
