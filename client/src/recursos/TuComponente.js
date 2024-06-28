@@ -44,23 +44,27 @@ const Login = () => {
             <form>
               <div className="form-input">
                 <input
-                id="nombre"
-                name="nombre"
-                type="text"
-                value={form.nombre}
-                onChange={changelog}
-                required></input>
-                <label className="input-label">Nombre</label>
+                  id="nombre"
+                  name="nombre"
+                  type="text"
+                  value={form.nombre}
+                  onChange={changelog}
+                  required></input>
+                <label className="input-label">
+                  Nombre
+                </label>
               </div>
               <div className="form-input">
                 <input
-                id="contrasena"
-                name="contrasena"
-                type="password"
-                value={form.contrasena}
-                onChange={changelog}
-                required></input>
-                <label className="input-label">Contraseña</label>
+                  id="contrasena"
+                  name="contrasena"
+                  type="password"
+                  value={form.contrasena}
+                  onChange={changelog}
+                  required></input>
+                <label className="input-label">
+                  Contraseña
+                </label>
               </div>
               <button onClick={guardarDatos} to={"/TuComponente"}>Crear</button>
             </form>
