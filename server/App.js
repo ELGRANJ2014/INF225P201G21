@@ -3,7 +3,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 
 const db = require("./Database");
-const pacienteRouter = require('./Paciente');
+const pacienteRouter = require('./PacienteRoutes');
 
 const app = express();
 app.use(cors());

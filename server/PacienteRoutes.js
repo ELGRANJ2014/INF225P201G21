@@ -77,4 +77,44 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.get('/', async (req, res) => {
+    const fichas = await Paciente.find({}).sort({createdAt: 1})
+
+    res.status(200).json(fichas)
+})
+
+router.get('/:id', async (req, res) => {
+    const { id } = req.params
+    
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({error: 'No se ha encontrado la ficha'})
+    }
+
+    const ficha = await Paciente.findById(id)
+
+    if (!ficha) {
+        return res.status(404).json({error: 'No se ha encontrado la ficha'})
+    }
+
+    res.status(200).json(ficha)
+})
+
+router.patch('/:id', async (req, res) => {
+    const { id } = req.params
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({error: 'No se encuentra la ficha'})
+    }
+
+    const ficha = await Paciente.findByIdAndUpdate({_id: id}, {
+        "RUT": '999-9'
+    })
+
+    if (!ficha) {
+        return res.status(400).json({error: 'No se encuentra la ficha'})
+    }
+
+    res.status(200).json(ficha)
+})
+
 module.exports = router;
